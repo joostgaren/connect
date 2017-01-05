@@ -1,0 +1,11 @@
+<md-card [class]="'loginCard'">
+    <md-card-title-group>
+        <md-card-title>Login</md-card-title>
+    </md-card-title-group>
+    <form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
+        <md-input formControlName="email" type="email" placeholder="Your email"></md-input>
+        <md-input formControlName="password" type="password" placeholder="Your password"></md-input>
+        <button md-button type="submit">Log in</button>
+    </form>
+    <div *ngIf="authenticationFailed">Fehler beim Login</div>
+</md-card>
