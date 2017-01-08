@@ -8,7 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MaterialModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
-import { HomeModule } from './modules/home/home.module';
+import { LayoutModule } from './modules/layout/layout.module';
 import { AuthReducer } from './modules/authentication/state/reducers/auth-reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './modules/authentication/state/effects/auth-effects';
@@ -25,7 +25,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    HomeModule,
+    LayoutModule,
     AuthenticationModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, environment.firebaseAuthConfig),
     MaterialModule.forRoot(),

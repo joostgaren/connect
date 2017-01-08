@@ -8,7 +8,7 @@ import 'rxjs/add/operator/switchMap';
 
 
 @Injectable()
-export class AuthEffects {
+export class LayoutEffects {
     constructor(
         private actions$: Actions,
         private firebase: AngularFire,
@@ -26,23 +26,12 @@ export class AuthEffects {
         .ofType('LOGOUT_REQUESTED')
         .map(() => this.firebase.auth.logout())
         .map(resp => ({ type: 'LOGOUT_FINISHED', payload: resp }))
-        .catch(() => Observable.of({ type: 'LOGIN_FAILED' }));
+        .catch(() => Observable.of({ type: 'LOGOUT_FAILED' }));
 
 
     @Effect() logoutFinished$ = this.actions$
         .ofType('LOGOUT_FINISHED')
         .map(() => this.router.navigateByUrl("auth"));
 
-    @Effect() login$ = this.actions$
-        .ofType('LOGIN_REQUESTED')
-        .switchMap(
-        action => this.firebase.auth.login(action.payload)
-            .then(resp => ({ type: 'LOGIN_FINISHED', payload: resp }))
-            .catch(resp => ({ type: 'LOGIN_FAILED', payload: resp }))
-        );        
-
-    @Effect({ dispatch: false }) loginSuccess$ = this.actions$
-        .ofType('LOGIN_FINISHED')
-        .map(() => this.router.navigateByUrl('layout/home'));
 
 }
