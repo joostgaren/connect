@@ -1,2 +1,6 @@
-<app-login (onLoginRequested)="doLogin($event)" [authenticationFailed]="authenticationFailed | async">
-</app-login>
+<div fxLayout="row" fxLayoutAlign="center center" style="height: 100%">
+    <div>
+        <app-login (onLoginRequested)="doLogin($event)" [authenticationRunning]="authenticationRunning | async" [authenticationFailed]="authenticationFailed | async">
+        </app-login>
+    </div>
+</div>

@@ -11,12 +11,16 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AuthenticationComponent implements OnInit {
 
-  authenticationFailed: Observable<boolean>;
+  private authenticationFailed: Observable<boolean>;
+  private authenticationRunning: Observable<boolean>;
 
-  constructor(private store: Store<State>) { 
+  constructor(private store: Store<State>) {
 
     this.authenticationFailed = this.store.select<State>('auth')
       .map(response => response.isAuthenticationFailed);
+
+    this.authenticationRunning = this.store.select<State>('auth')
+      .map(response => response.isAuthenticationRunning);
 
   }
 
@@ -24,10 +28,9 @@ export class AuthenticationComponent implements OnInit {
 
   }
 
-   doLogin(event) {
-     console.log(event);
-     this.store.dispatch({ type: LOGIN_REQUESTED, payload: event });
+  doLogin(event) {
+    console.log(event);
+    this.store.dispatch({ type: LOGIN_REQUESTED, payload: event });
   }
 
 }
- 

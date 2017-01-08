@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AuthenticationComponent } from './authentication.component';
 import { AuthenticationRoutingModule } from './authentication.routing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { LoginModule } from './login/login.module';
 
 @NgModule({
@@ -11,6 +12,7 @@ import { LoginModule } from './login/login.module';
     AuthenticationRoutingModule,
     LoginModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
   ],
   declarations: [AuthenticationComponent]
 })
