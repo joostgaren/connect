@@ -17,6 +17,7 @@ export interface State {
     isAuthenticationRunning: boolean;
     isUserLoggedIn: boolean;
     isAuthenticationFailed: boolean,
+    isRememberMeSet: boolean,
 };
 
 const initialState: State = {
@@ -24,6 +25,7 @@ const initialState: State = {
     isAuthenticationRunning: false,
     isUserLoggedIn: false,
     isAuthenticationFailed: false,
+    isRememberMeSet: false,
 };
 
 export function AuthReducer(state = initialState, action: Action): State {
@@ -60,6 +62,7 @@ export function AuthReducer(state = initialState, action: Action): State {
             return Object.assign({}, state, {
                 isAuthenticationRunning: true,
                 isAuthenticationFailed: false,
+                isRememberMeSet: action.payload.rememberMe
             })
 
         case LOGIN_FINISHED:
