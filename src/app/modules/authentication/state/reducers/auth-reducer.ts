@@ -25,13 +25,11 @@ const initialState: State = {
     isAuthenticationRunning: false,
     isUserLoggedIn: false,
     isAuthenticationFailed: false,
-    isRememberMeSet: false,
+    isRememberMeSet: true,
 };
 
 export function AuthReducer(state = initialState, action: Action): State {
 
-    console.log("Action " + action.type);
-    console.log("Payload " + JSON.stringify(action.payload));
 
     switch (action.type) {
 

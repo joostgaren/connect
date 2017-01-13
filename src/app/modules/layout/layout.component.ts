@@ -13,7 +13,19 @@ export class LayoutComponent implements OnInit {
   // logout user if rememberMe is not set and browser is closed
   @HostListener('window:beforeunload', ['$event'])
   beforeunloadHandler(event) {
+    this.onCloseBrowser();
+  }
 
+
+  title: 'test';
+
+  constructor(private store: Store<State>) {
+  }
+
+  ngOnInit() {
+  }
+
+  onCloseBrowser() {
     let state: State;
 
     this.store.select<State>('auth')
@@ -21,20 +33,6 @@ export class LayoutComponent implements OnInit {
       .subscribe(s => state = s);
 
     state.isRememberMeSet ? null : this.logout();
-  }
-
-
-  title: 'test';
-
-  isBootstrapFinished: Observable<boolean>;
-
-  constructor(private store: Store<State>) {
-
-    this.isBootstrapFinished = this.store.select<State>('auth')
-      .map(response => response.isBootstrapFinished);
-  }
-
-  ngOnInit() {
   }
 
   logout() {
