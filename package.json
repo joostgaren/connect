@@ -16,7 +16,7 @@
     "start": "node server.js",
     "deploy": "git push origin master && git push heroku master"
   },
-  "private": true,
+  "private": true, 
   "dependencies": {
     "@angular/common": "^2.3.1",
     "@angular/compiler": "^2.3.1",
