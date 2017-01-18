@@ -13,7 +13,8 @@
     "e2e": "protractor",
     "build-i18n:de-DE": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE",
     "postinstall": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "git push origin master && git push heroku master"
   },
   "private": true,
   "dependencies": {
@@ -57,7 +58,7 @@
     "typescript": "~2.0.3"
   },
   "engines": {
-    "node": "6.9.2",
+    "node": "6.9.1",
     "npm": "3.10.8"
   }
 }
