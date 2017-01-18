@@ -1,5 +1,6 @@
 {
   "exclude": [ "test.ts" ],
+  "angularCompilerOptions": { "genDir": "i18n" },
   "compilerOptions": {
     "baseUrl": "",
     "declaration": false,
@@ -11,7 +12,7 @@
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc",
     "sourceMap": true,
-    "target": "es6",
+    "target": "es5",
     "typeRoots": [
       "../node_modules/@types"
     ]

@@ -5,11 +5,15 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --aot",
+    "startold": "ng serve --aot --i18n-file=src/i18n/messages.de-DE.xlf --locale=de-DE --i18n-format=xlf",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
+    "extract-i18n": "cd src && ng-xi18n",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "build-i18n:de-DE": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE",
+    "postinstall": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE",
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -25,8 +29,10 @@
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^2.0.0",
     "@ngrx/store": "^2.2.1",
+    "angular-cli": "^1.0.0-beta.24",
     "angularfire2": "^2.0.0-beta.7",
     "core-js": "^2.4.1",
+    "express": "^4.14.0",
     "firebase": "^3.6.4",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
@@ -49,5 +55,9 @@
     "ts-node": "1.2.1",
     "tslint": "^4.0.2",
     "typescript": "~2.0.3"
+  },
+  "engines": {
+    "node": "6.9.2",
+    "npm": "3.10.8"
   }
 }

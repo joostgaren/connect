@@ -1,6 +1,6 @@
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
