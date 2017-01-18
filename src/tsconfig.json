@@ -1,6 +1,9 @@
 {
   "exclude": [ "test.ts" ],
-  "angularCompilerOptions": { "genDir": "i18n" },
+  "angularCompilerOptions": { 
+    "genDir": "i18n",
+    "strictMetadataEmit": true
+   },
   "compilerOptions": {
     "baseUrl": "",
     "declaration": false,

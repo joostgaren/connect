@@ -11,7 +11,7 @@
     "extract-i18n": "cd src && ng-xi18n",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "build-i18n:de-DE": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE",
+    "build-i18n:de-DE": "ng build --prod",
     "postinstall": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE",
     "start": "node server.js",
     "deploy": "git push origin master && git push heroku master"
