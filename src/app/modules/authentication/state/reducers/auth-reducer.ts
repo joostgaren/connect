@@ -1,6 +1,7 @@
 import { ActionReducer, Action } from '@ngrx/store';
 import { FirebaseAuthState } from 'angularfire2';
 
+export const SET_USER = 'SET_USER';
 export const BOOTSTRAP_REQUESTED = 'BOOTSTRAP_REQUESTED';
 export const BOOTSTRAP_FINISHED = 'BOOTSTRAP_FINISHED';
 export const BOOTSTRAP_FAILED = 'BOOTSTRAP_FAILED';
@@ -13,6 +14,7 @@ export const LOGIN_FAILED = 'LOGIN_FAILED';
 
 
 export interface State {
+    user: FirebaseAuthState;
     isBootstrapFinished: boolean;
     isAuthenticationRunning: boolean;
     isUserLoggedIn: boolean;
@@ -21,6 +23,7 @@ export interface State {
 };
 
 const initialState: State = {
+    user: null,
     isBootstrapFinished: false,
     isAuthenticationRunning: false,
     isUserLoggedIn: false,
@@ -30,8 +33,15 @@ const initialState: State = {
 
 export function AuthReducer(state = initialState, action: Action): State {
 
-
+  console.log(state);
     switch (action.type) {
+
+        case SET_USER:
+            return Object.assign({}, state, {
+                user: action.payload,
+                isBootstrapFinished: true,
+                isUserLoggedIn: action.payload ? true : false,
+            })
 
         case BOOTSTRAP_REQUESTED:
             return state;

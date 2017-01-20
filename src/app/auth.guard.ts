@@ -14,9 +14,12 @@ export class AuthGuard implements CanActivate {
     canActivate() {
         console.log("canActivate");
         return this.store.select<State>('auth')
-            .first(response => response.isBootstrapFinished)
+            .first()
             .map(response => response.isUserLoggedIn)
-            .do(isUserLoggedIn => !isUserLoggedIn && this.router.navigateByUrl('/auth'));
+            .do(isUserLoggedIn => {
+                console.log(isUserLoggedIn);
+                !isUserLoggedIn && this.router.navigateByUrl('/auth');
+            });
     }
 }
 

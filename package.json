@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "startold": "ng serve --aot --i18n-file=src/i18n/messages.de-DE.xlf --locale=de-DE --i18n-format=xlf",
+    "startlocal": "ng serve --aot --i18n-file=src/i18n/messages.de-DE.xlf --locale=de-DE --i18n-format=xlf",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "extract-i18n": "cd src && ng-xi18n",

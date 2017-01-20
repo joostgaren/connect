@@ -1,12 +1,10 @@
-var express = require('express');
-var path = require('path');
-var router = express.Router();
+const express = require('express');
+const app = express();
 
-router.use('/', express.static('dist', { redirect: false}));
+app.use(express.static(__dirname + '/dist'));
 
-router.get('*', function (req, res, next) {
-    res.sendFile(path.resolve('dist/de-DE/index.html'))
+app.get('*', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname + '/dist/de-DE/index.html'))
 });
 
-module.exports = router;
-
+app.listen(process.env.PORT || 8080);

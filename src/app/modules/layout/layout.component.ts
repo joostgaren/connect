@@ -43,7 +43,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
       .first()
       .subscribe(s => state = s);
 
-    state.isRememberMeSet ? null : this.logout();
+//    state.isRememberMeSet ? null : this.logout();
   }
 
   logout() {
