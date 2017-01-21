@@ -9,7 +9,7 @@ app.use(requestLanguage({
     cookie: {
         name: 'language',
         options: {maxAge: 24*3600*1000},
-        url: '/{language}'
+        url: '/dist/{language}'
     }
 }));
 
