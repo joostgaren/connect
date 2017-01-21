@@ -13,7 +13,7 @@
     "e2e": "protractor",
     "build-i18n:de-DE": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE",
     "build-i18n:en-EN": "ng build -o dist/en-EN --aot -prod --bh /en-EN/ --i18n-file=src/i18n/messages.en-EN.xlf --i18n-format=xlf --locale=en-EN",
-    "postinstall": "npm start build-i18n:de-DE && npm start build-i18n:en-EN",
+    "postinstall": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE && ng build -o dist/en-EN --aot -prod --bh /en-EN/ --i18n-file=src/i18n/messages.en-EN.xlf --i18n-format=xlf --locale=en-EN",
     "start": "node server.js",
     "deploy": "git push origin master && git push heroku master"
   },
