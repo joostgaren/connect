@@ -7,14 +7,14 @@ app.use(cookieParser());
 app.use(requestLanguage({
     languages: ['en-EN', 'de-DE'],
     cookie: {
-        name: 'LOCALE_ID',
+        name: 'language',
         options: {maxAge: 24*3600*1000},
-        url: '/{LOCALE_ID}'
+        url: '/{language}'
     }
 }));
 
 app.get('/', function(req, res, next) {
-    console.log(req.LOCALE_ID);
+    console.log(req.language);
 })
 
 //app.use(express.static(__dirname + '/dist'));
