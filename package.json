@@ -37,6 +37,7 @@
     "@types/node": "^6.0.42",
     "angular-cli": "^1.0.0-beta.24",
     "angularfire2": "^2.0.0-beta.7",
+    "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
     "express": "^4.14.0",
     "express-request-language": "^1.1.9",
