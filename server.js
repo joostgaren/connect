@@ -13,15 +13,17 @@ app.use(requestLanguage({
     }
 }));
 
-app.get('/', function(req, res, next) {
-    console.log(req.language);
-})
+//app.get('/', function(req, res, next) {
+//    console.log(req.language);
+//})
 
 //app.use(express.static(path.join(__dirname, '/dist')));
 app.use(express.static(__dirname + '/dist'));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/dist/' + req.language))
+app.get('/', (req, res) => {
+        console.log(req.language);
+res.redirect(__dirname + '/dist/' + req.language + 'index.html');
+//    res.sendFile(path.join(__dirname + '/dist/' + req.language))
 });
 
 app.listen(process.env.PORT || 8080);
