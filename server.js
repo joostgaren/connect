@@ -20,7 +20,7 @@ app.use(requestLanguage({
 //app.use(express.static(path.join(__dirname, '/dist')));
 app.use(express.static(__dirname + '/dist'));
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
         console.log(req.language);
 res.redirect(req.language + '/index.html');
 //    res.sendFile(path.join(__dirname + '/dist/' + req.language))
