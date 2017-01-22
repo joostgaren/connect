@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Http, Headers, ResponseContentType } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,7 +10,8 @@ import 'rxjs/add/operator/mergeMap';
 export class DataService {
 
   private header;
-  private backend: string = 'api/mobility-platform';
+//  private backend: string = 'api/mobility-platform';
+  private backend: string = environment.backend;
 
   constructor(private http: Http) {
 
