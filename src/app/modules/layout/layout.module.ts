@@ -1,3 +1,4 @@
+import { AuthenticationModule } from './../authentication/authentication.module';
 import { HomeModule } from './../home/home.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,7 +7,6 @@ import { LayoutRoutingModule } from './layout.routing';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MaterialModule } from '@angular/material';
 
-
 @NgModule({
     imports: [
         CommonModule,
@@ -14,6 +14,7 @@ import { MaterialModule } from '@angular/material';
         HomeModule,
         FlexLayoutModule,
         MaterialModule,
+        AuthenticationModule
     ],
     exports: [
         LayoutComponent,
