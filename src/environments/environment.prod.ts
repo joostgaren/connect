@@ -17,6 +17,6 @@ export const environment = {
     provider: AuthProviders.Password,
     method: AuthMethods.Password
   },
-  backend: 'http://fach-it.de:8096/mobility-platform'
+  backend: 'https://fach-it.de/mobility-platform'
 
 };
