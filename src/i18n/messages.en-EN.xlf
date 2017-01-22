@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="a9c8652092c8e08a5e0b989538a125bd226ed3e0" datatype="html">
         <source>Sign-In:</source>
-        <target>Sign-In:</target>
+        <target>Log in to your Account!</target>
         <note priority="1" from="description">Title of Login / Sign-In Screen</note>
       </trans-unit>
     </body>

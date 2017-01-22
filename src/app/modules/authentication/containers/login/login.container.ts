@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { LOGIN_REQUESTED, State } from './state/reducers/auth-reducer';
+import { LOGIN_REQUESTED, State } from './../../state/reducers/auth-reducer';
 import { Observable } from 'rxjs/Observable';
 
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './authentication.component.html',
-  styleUrls: ['./authentication.component.css']
+  selector: 'app-container-login',
+  templateUrl: './login.container.html',
+  styleUrls: ['./login.container.css']
 })
-export class AuthenticationComponent implements OnInit {
+export class LoginContainer implements OnInit {
 
   private authenticationFailed: Observable<boolean>;
   private authenticationRunning: Observable<boolean>;
@@ -22,7 +22,7 @@ export class AuthenticationComponent implements OnInit {
     this.authenticationRunning = this.store.select<State>('auth')
       .map(response => response.isAuthenticationRunning);
 
-  }
+  } 
 
   ngOnInit() {
 

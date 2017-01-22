@@ -17,7 +17,7 @@ app.get('/', function(req, res, next) {
     console.log(req.language);
 })
 
-app.use(express.static(path.join(__dirname, 'dist')));
+//app.use(express.static(path.join(__dirname, 'dist')));
 //app.use(express.static(__dirname + '/dist'));
 
 //app.get('*', (req, res) => {

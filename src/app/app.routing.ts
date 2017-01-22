@@ -6,7 +6,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
     imports: [RouterModule.forRoot([
         { path: '', redirectTo: 'layout/home', pathMatch: 'full' },
         { path: 'layout', loadChildren: 'app/modules/layout/layout.module#LayoutModule' },
-        { path: 'auth', loadChildren: 'app/modules/authentication/authentication.module#AuthenticationModule' },
+        { path: 'login', loadChildren: 'app/modules/authentication/authentication.module#AuthenticationModule' },
         { path: '**', redirectTo: 'layout/home' }
     ],
         { preloadingStrategy: PreloadAllModules }

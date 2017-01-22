@@ -31,7 +31,7 @@ export class AuthEffects {
 
     @Effect() logoutFinished$ = this.actions$
         .ofType('LOGOUT_FINISHED')
-        .map(() => this.router.navigateByUrl("auth"));
+        .map(() => this.router.navigateByUrl("login"));
 
     @Effect() login$ = this.actions$
         .ofType('LOGIN_REQUESTED')

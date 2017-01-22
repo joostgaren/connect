@@ -15,7 +15,9 @@ import { AuthEffects } from './modules/authentication/state/effects/auth-effects
 import { AppRoutingModule } from './app.routing';
 import { AuthGuard } from './auth.guard';
 import { UserService } from './services/user.service';
+import { DataService } from './services/data.service';
 import { AngularFire } from 'angularfire2';
+
 
 import { AppComponent } from './app.component';
 
@@ -24,7 +26,7 @@ import { AppComponent } from './app.component';
  * Aot compilation requires a reference to an exported function.
  */
 export function preBoot(userService: UserService): Function {
-    return () => userService.load();
+  return () => userService.load();
 }
 
 
@@ -35,7 +37,7 @@ export function preBoot(userService: UserService): Function {
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule, 
+    HttpModule,
     LayoutModule,
     AuthenticationModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, environment.firebaseAuthConfig),
@@ -53,7 +55,8 @@ export function preBoot(userService: UserService): Function {
       deps: [UserService, AngularFire, StoreModule],
       multi: true
     },
-    AuthGuard 
+    DataService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

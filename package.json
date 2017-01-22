@@ -5,7 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "startlocal": "ng serve --aot --i18n-file=src/i18n/messages.de-DE.xlf --locale=de-DE --i18n-format=xlf",
+    "startlocal": "ng serve --proxy-config proxy.conf.json --aot --i18n-file=src/i18n/messages.en-EN.xlf --locale=en-EN --i18n-format=xlf",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "extract-i18n": "cd src && ng-xi18n",
@@ -36,6 +36,7 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
     "angular-cli": "^1.0.0-beta.24",
+    "angular2-google-maps": "^0.17.0",
     "angularfire2": "^2.0.0-beta.7",
     "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",

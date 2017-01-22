@@ -4,7 +4,7 @@ import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
 import { ViewContainerRef } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
+  selector: 'authentication-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })

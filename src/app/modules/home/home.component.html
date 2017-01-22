@@ -1,2 +1,6 @@
-Home!
-<button></button>
+<div fxLayout="row" fxLayoutAlign="center center" style="height: 100%">
+    <div id="map"></div>
+</div>
+
+
+  <div *ngFor="let m of markers | async; let i = index"></div>

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AuthenticationComponent } from './authentication.component';
+import { LoginContainer } from './containers/login/login.container';
 
 @NgModule({
   imports: [RouterModule.forChild([
     {
-      path: 'auth', component:AuthenticationComponent, data: { title: 'Login' },
+      path: 'login', component:LoginContainer, data: { title: 'Login' },
     }
   ])],
   exports: [RouterModule]

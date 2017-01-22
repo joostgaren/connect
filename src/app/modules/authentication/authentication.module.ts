@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthenticationComponent } from './authentication.component';
+import { LoginContainer } from './containers/login/login.container';
+import { LoginComponent } from './components/login/login.component';
 import { AuthenticationRoutingModule } from './authentication.routing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { LoginModule } from './login/login.module';
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    LoginModule,
     ReactiveFormsModule,
+    MaterialModule,
     FlexLayoutModule,
   ],
-  declarations: [AuthenticationComponent]
+  declarations: [
+    LoginContainer,
+    LoginComponent
+  ]
 })
 export class AuthenticationModule { }
-  

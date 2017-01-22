@@ -1,0 +1,6 @@
+<div fxLayout="row" fxLayoutAlign="center center" style="height: 100%">
+    <div>
+        <authentication-login (onLoginRequested)="doLogin($event)" [authenticationRunning]="authenticationRunning | async" [authenticationFailed]="authenticationFailed | async">
+        </authentication-login>
+    </div>
+</div>
