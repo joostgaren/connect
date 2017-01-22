@@ -22,7 +22,7 @@ app.use(express.static(__dirname + '/dist'));
 
 app.get('/', (req, res) => {
         console.log(req.language);
-res.redirect(__dirname + '/dist/' + req.language + 'index.html');
+res.redirect(req.language + '/index.html');
 //    res.sendFile(path.join(__dirname + '/dist/' + req.language))
 });
 
