@@ -1,6 +1,6 @@
 {
    "/api": {
-      "target": "http://fach-it.de:8096",
+      "target": "https://fach-it.de",
       "secure": false,
       "pathRewrite": {"^/api" : ""}
    }
