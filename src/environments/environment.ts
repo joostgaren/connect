@@ -16,6 +16,5 @@ export const environment = {
     provider: AuthProviders.Password,
     method: AuthMethods.Password
   },
-  backend: 'api/mobility-platform'
-
+  backend: 'api/mobility-platform',
 };

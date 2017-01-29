@@ -1,8 +1,11 @@
+
+<md-sidenav-container>
+
 <md-toolbar color="primary">
 
   <div class="flex-container" style="width: 100%" fxLayout="row" fxLayoutAlign="space-between center">
-<div class="flex-item" fxFlex="20%" fxFlex.xs="40%"> test </div>
-<div class="flex-item" fxFlex> test 2 </div>
+<div class="flex-item" fxFlex="20%" fxFlex.xs="40%"></div>
+<div class="flex-item" fxFlex></div>
 <div class="flex-item" fxFlex="20%" style="text-align: right">
 
 <profile-container></profile-container>
@@ -12,20 +15,16 @@
 
 
 </md-toolbar>
-<!--<md-toolbar color="primary">Responsive SideNavs using Flex-Layout <button md-raised-button color="primary" (click)="logout()">Logout</button><md-icon md-prefix>account_circle</md-icon> </md-toolbar>
--->
-<md-sidenav-container>
-  <md-sidenav #sidenav mode="side" [opened]="isOpen" class="example-sidenav">
 
-    <ng-content select="[sidenav-content]"></ng-content>
+  <md-sidenav #sidenav mode="side" [opened]="isOpen">
+
+
+
+<!--    <ng-content select="[sidenav-content]"></ng-content>-->
 
   </md-sidenav>
-<!-- <div class="main-content" fxLayout="column" style="height: 100%">
--->
-<!--    <ng-content select="[main-content]"></ng-content>
--->
+ <div class="md-sidenav-content">
     <router-outlet></router-outlet>
-
-<!--</div>-->
+ </div>
 </md-sidenav-container>
 

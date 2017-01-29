@@ -2,6 +2,7 @@
 html, body { 
   margin:0; 
   padding:0; 
+  width: 100%;
   height:100%; 
 }
 /* You can add global styles to this file, and also import other style files */
@@ -29,7 +30,7 @@ html, body {
     -webkit-animation-delay: -1s;
             animation-delay: -1s; }
   .sk-wave .sk-rect4 {
-    -webkit-animation-delay: -0.9s;
+    -webkit-animation-delay: -0.9s; 
             animation-delay: -0.9s; }
   .sk-wave .sk-rect5 {
     -webkit-animation-delay: -0.8s;
@@ -47,4 +48,4 @@ html, body {
             transform: scaleY(0.4); }
   20% {
     -webkit-transform: scaleY(1);
-            transform: scaleY(1); } }
+transform: scaleY(1); } }

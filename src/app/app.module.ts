@@ -1,4 +1,3 @@
-import { TestBed } from '@angular/core/testing';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
@@ -18,7 +17,7 @@ import { AuthGuard } from './auth.guard';
 import { UserService } from './services/user.service';
 import { DataService } from './services/data.service';
 import { AngularFire } from 'angularfire2';
- 
+
 
 import { AppComponent } from './app.component';
 
@@ -38,7 +37,7 @@ export function preBoot(userService: UserService): Function {
   imports: [
     BrowserModule,
     FormsModule,
-     HttpModule,
+    HttpModule,
     LayoutModule,
     AuthenticationModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, environment.firebaseAuthConfig),
