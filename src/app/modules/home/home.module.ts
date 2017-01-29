@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { ChartModule } from "./../chart/chart.module";
 
 
 
@@ -13,7 +12,6 @@ import { ChartModule } from "./../chart/chart.module";
         CommonModule,
         MaterialModule,
         FlexLayoutModule,
-        ChartModule,
     ],
     exports: [
         HomeComponent,

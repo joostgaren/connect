@@ -1,6 +1,6 @@
 {
   "project": {
-    "version": "1.0.0-beta.26",
+    "version": "1.0.0-beta.24",
     "name": "connect"
   },
   "apps": [
@@ -13,7 +13,7 @@
       ],
       "index": "index.html",
       "main": "main.ts",
-      "test": "test.ts",
+      "test": "test.ts", 
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "mobile": false,
@@ -29,6 +29,8 @@
       }
     }
   ],
+  "addons": [],
+  "packages": [],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"

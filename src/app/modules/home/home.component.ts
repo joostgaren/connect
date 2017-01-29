@@ -4,6 +4,7 @@ import { LOGOUT_REQUESTED, State } from '../authentication/state/reducers/auth-r
 import { DataService } from './../../services/data.service';
 import { Observable } from 'rxjs';
 
+declare var google: any;
 
 @Component({
   selector: 'app-home',
@@ -12,36 +13,61 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  title: 'test';
-  private chartData: Array<any>;
+title: 'test';
 
-  lat: number = 51.678418;
+ lat: number = 51.678418;
   lng: number = 7.809007;
   zoom: number = 5;
   markers: Observable<any>;
 
   constructor(private dataService: DataService) {
-  }
+   }
 
   ngOnInit() {
+    this.markers = this.dataService.getVehicleData();
+    console.log(this.markers);
 
- this.markers = this.dataService.getVehicleData();
-console.log(this.markers);
+    var directionsService = new google.maps.DirectionsService;
+       var directionsDisplay = new google.maps.DirectionsRenderer;
+       var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: 41.85, lng: -87.65}
+        });
+        directionsDisplay.setMap(map);
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
 
-      this.generateData();
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+          var waypts = [];
+          var checkboxArray:any[] = [
+              'winnipeg', 'regina','calgary'
+      ];
+      for (var i = 0; i < checkboxArray.length; i++) {
+
+            waypts.push({
+              location: checkboxArray[i],
+              stopover: true
+            });
+
+        }
+
+        directionsService.route({
+          origin: {lat: 41.85, lng: -87.65},
+          destination: {lat: 49.3, lng: -123.12},
+          waypoints: waypts,
+          optimizeWaypoints: true,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
 
 
   }
-
-  generateData() {
-    this.chartData = [2, 5, 4];
-  }
-
-  test(event) {
-//    this.chartConfig = { settings: { fill: 'rgba(195, 0, 47, 2)', interpolation: null }, dataset: null };
-  }
-
-
 
 
 }

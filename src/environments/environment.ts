@@ -15,6 +15,6 @@ export const environment = {
   firebaseAuthConfig: {
     provider: AuthProviders.Password,
     method: AuthMethods.Password
-  },
-  backend: 'api/mobility-platform',
+  }
+
 };

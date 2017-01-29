@@ -1,8 +1,32 @@
+.active-link {
+	color: orange;
+    border-right: solid;
+}
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  cursor:pointer;
+}
+
+.main-content {
+  padding:25px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
 
 .md-sidenav-container {
   height: 100%;
 }
 
-.md-sidenav-content {
-    background-color: #E5E2E2;
+md-sidenav {
+  
+  background-color: #edf8ff;
 }

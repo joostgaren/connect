@@ -34,9 +34,7 @@ const initialState: State = {
 export function AuthReducer(state = initialState, action: Action): State {
 
   console.log(state);
-  console.log(action.payload);
     switch (action.type) {
-
 
         case SET_USER:
             return Object.assign({}, state, {
@@ -62,7 +60,6 @@ export function AuthReducer(state = initialState, action: Action): State {
 
         case LOGOUT_FINISHED:
             return Object.assign({}, state, {
-                user: null,
                 isUserLoggedIn: false,
             })
 
@@ -78,7 +75,6 @@ export function AuthReducer(state = initialState, action: Action): State {
 
         case LOGIN_FINISHED:
             return Object.assign({}, state, {
-                user: action.payload,
                 isAuthenticationRunning: false,
                 isUserLoggedIn: true,
             })            

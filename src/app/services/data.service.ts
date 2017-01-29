@@ -1,4 +1,3 @@
-import { environment } from './../../environments/environment';
 import { Http, Headers, ResponseContentType } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,15 +9,14 @@ import 'rxjs/add/operator/mergeMap';
 export class DataService {
 
   private header;
-//  private backend: string = 'api/mobility-platform';
-  private backend: string = environment.backend;
+  private backend: string = 'api/mobility-platform';
 
   constructor(private http: Http) {
 
     this.header = new Headers();
     this.header.append('Accept', 'application/json');
     this.header.append('Content-Type', 'application/json');
-    this.header.append("Authorization", "Basic " + btoa('cv-test250@mailinator.com' + ":" + 'Test123456'));
+    this.header.append("Authorization", "Basic " + btoa('testcv@mailinator.com' + ":" + 'Test123456!'));
 
   }
 
