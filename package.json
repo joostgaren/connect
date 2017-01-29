@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
-"scripts": {
+  "scripts": {
     "ng": "ng",
-    "startlocal": "ng serve --proxy-config proxy.conf.json",
+    "startlocal": "ng serve --proxy-config proxy.conf.json --aot --i18n-file=src/i18n/messages.en-EN.xlf --locale=en-EN --i18n-format=xlf",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "extract-i18n": "cd src && ng-xi18n",
@@ -16,30 +16,39 @@
     "postinstall": "ng build -o dist/de-DE --aot -prod --bh /de-DE/ --i18n-file=src/i18n/messages.de-DE.xlf --i18n-format=xlf --locale=de-DE && ng build -o dist/en-EN --aot -prod --bh /en-EN/ --i18n-file=src/i18n/messages.en-EN.xlf --i18n-format=xlf --locale=en-EN",
     "start": "node server.js",
     "deploy": "git push origin master && git push heroku master"
-},
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "^2.3.1",
     "@angular/compiler": "^2.3.1",
+    "@angular/compiler-cli": "^2.3.1",
     "@angular/core": "^2.3.1",
+    "@angular/flex-layout": "^2.0.0-beta.1",
     "@angular/forms": "^2.3.1",
     "@angular/http": "^2.3.1",
+    "@angular/material": "^2.0.0-beta.1",
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/effects": "^2.0.0",
+    "@ngrx/store": "^2.2.1",
+    "@types/jasmine": "2.5.38",
+    "@types/node": "^6.0.42",
+    "angular-cli": "^1.0.0-beta.24",
+    "angular2-google-maps": "^0.17.0",
+    "angularfire2": "^2.0.0-beta.7",
+    "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
-    "d3": "^4.4.4",
-    "moment": "^2.17.1",
+    "express": "^4.14.0",
+    "express-request-language": "^1.1.9",
+    "firebase": "^3.6.4",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
+    "typescript": "~2.0.3",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^2.3.1",
-    "@types/d3": "^4.4.1",
-    "@types/jasmine": "2.5.38",
-    "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.26",
     "codelyzer": "~2.0.0-beta.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
@@ -50,7 +59,10 @@
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
-    "tslint": "^4.3.0",
-    "typescript": "~2.0.3"
+    "tslint": "^4.0.2"
+  },
+  "engines": { 
+    "node": "6.9.1",
+    "npm": "3.10.8"
   }
 }
