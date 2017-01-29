@@ -1,15 +1,11 @@
 <button md-icon-button [mdMenuTriggerFor]="menu">
    <md-icon>account_circle</md-icon>
 </button>
+{{_userName}}
+
+
 <md-menu #menu="mdMenu">
-  <md-card>
-    <md-card-header>
-      <md-card-title>Logged-In as:</md-card-title>
-      <md-card-subtitle>{{_userName}}</md-card-subtitle>
-    </md-card-header>
-  </md-card>
   <button md-menu-item> Settings </button>
   <button md-menu-item> Help </button>
-  <button md-menu-item (click)="doLogout()"><md-icon>exit_to_app</md-icon><span>Sign Out</span> </button>
+  <button md-menu-item (click)="doLogout()"> Sign Out </button>
 </md-menu>
-

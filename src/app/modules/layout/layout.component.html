@@ -3,11 +3,9 @@
   <div class="flex-container" style="width: 100%" fxLayout="row" fxLayoutAlign="center center">
 <div class="flex-item" fxFlex="20%" fxFlex.xs="40%"> test </div>
 <div class="flex-item" fxFlex> test 2 </div>
-<div class="flex-item" fxFlex="25px">
+<div class="flex-item" fxFlex="20%" fxFlexAlign="end">
 
-  <button md-icon-button [mdMenuTriggerFor]="menu">
-   <md-icon>account_circle</md-icon>
-</button>
+<profile-container></profile-container>
 
 </div>
 </div>
@@ -31,9 +29,3 @@
 <!--</div>-->
 </md-sidenav-container>
 
-
-<md-menu #menu="mdMenu">
-  <button md-menu-item> Settings </button>
-  <button md-menu-item> Help </button>
-  <button md-menu-item (click)="logout()"> Sign Out </button>
-</md-menu>
