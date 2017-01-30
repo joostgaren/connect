@@ -2,7 +2,9 @@ import { Component, OnInit, HostListener, Inject, OnDestroy } from '@angular/cor
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { LOGOUT_REQUESTED, State } from '../authentication/state/reducers/auth-reducer';
-import { MediaChange, MatchMediaObservable, BreakPointRegistry, MatchMedia } from "@angular/flex-layout";
+import { MediaChange, BreakPointRegistry, MatchMedia } from "@angular/flex-layout";
+import { ObservableMediaService } from "@angular/flex-layout/media-query/observable-media-service";
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-layout',
@@ -26,8 +28,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
   //  constructor(private store: Store<State>) {
   //  }
 
-  constructor(private store: Store<State>, @Inject(MatchMediaObservable) public $media) {
-    this._subscription = $media.subscribe((change: MediaChange) => {
+  constructor(private store: Store<State>, @Inject(ObservableMediaService) media) {
+    this._subscription = media.subscribe((change: MediaChange) => {
       this.isOpen = (change.mqAlias !== 'xs');
       this.mediaChange = change;
     });
